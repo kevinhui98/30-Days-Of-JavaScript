@@ -70,3 +70,104 @@ function findMax(a, b, c) {
     return Math.max(a, b, c)
 }
 console.log(findMax(12, 43, 6543))
+//exercise 2
+function solveLinEquation(a, b, c) {
+    if ((a < 0 && b < 0 && c < 0) || (a > 0 && b > 0 && c > 0)) {
+        return `y = ${(-(a) / b)}x${-c / b}`
+    } else if ((a < 0 && b < 0 && c > 0) || (a > 0 && b > 0 && c < 0)) {
+        return `y = ${(-(a) / b)}x+${-c / b}`
+    } else if ((a < 0 && b > 0 && c < 0) || (a > 0 && b < 0 && c > 0)) {
+        return `y = ${(-(a) / b)}x+${-c / b}`
+    } else if ((a > 0 && b < 0 && c < 0) || (a < 0 && b > 0 && c > 0)) {
+        return `y = ${(-(a) / b)}x${-c / b}`
+    }
+
+} console.log(solveLinEquation(1, -2, -3))
+function printArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+}
+function showDateTime() {
+    let dateTime = new Date()
+    let hour = dateTime.getHours()
+    if (hour == 24) {
+        hour = 0
+    }
+    if (hour > 12) {
+        hour -= 12
+    }
+    if (hour < 12) {
+        hour = '0' + hour.toString()
+    }
+    let min = dateTime.getMinutes()
+    if (min < 10) {
+        min = '0' + min.toString()
+    }
+    console.log(`${dateTime.getMonth()}/${dateTime.getDate()}/${dateTime.getFullYear()} ${hour}:${dateTime.getMinutes()}`)
+}
+showDateTime()
+const swapValues = (x = 34, y = 31) => {
+    let temp = x
+    x = y
+    y = temp
+    return [x, y]
+}
+console.log(swapValues(23, 53))
+const reverseArray = (arr) => {
+    return arr.reverse()
+}
+console.log(reverseArray([1, 2, 3, 4, 5]))
+const capitalizeArray = (arr) => {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i].toUpperCase())
+    }
+    return newArr
+}
+console.log(capitalizeArray(['a', 'b', 'c']))
+let arr = []
+const addItem = (item) => {
+    return arr.push(item)
+}
+const removeItem = (item) => {
+    return arr.splice(arr.indexOf(item))
+}
+const sumOfNumbers = (...arg) => { //same as sum function
+    let sum = 0
+    for (let num of arg) {
+        sum += num
+    }
+    return sum
+}
+const sumOfOdds = (...arg) => {
+    let sum = 0
+    for (let num of arg) {
+        if (num % 2 != 0) {
+            sum += num
+        }
+    }
+    return sum
+}
+const sumOfEven = (...arg) => {
+    let sum = 0
+    for (let num of arg) {
+        if (num % 2 == 0) {
+            sum += num
+        }
+    }
+    return sum
+}
+const evensAndOdds = (number) => {
+    let odds = 0
+    let evens = 0
+    for (let i = 0; i < number + 1; i++) {
+        if (i % 2 == 0) {
+            evens++
+        } else odds++
+    }
+    console.log(`The number of odds are ${odds}.`)
+    console.log(`The number of evens are ${evens}.`)
+    return true
+}
+evensAndOdds(100)
